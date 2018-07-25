@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JohnDeere/outstanding.svg?branch=master)](https://travis-ci.org/JohnDeere/outstanding)
+
 # outstanding
 A library for the highly reused Outstanding class.
 
