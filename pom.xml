@@ -5,7 +5,7 @@
     <groupId>com.deere.isg</groupId>
     <artifactId>outstanding</artifactId>
     <packaging>jar</packaging>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
 
     <name>outstanding</name>
     <description>A non-blocking collection for work tracking.</description>
@@ -26,14 +26,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <inceptionYear>2016</inceptionYear>
-        <copyrightOwner>Deere &#038; Company</copyrightOwner>
+        <copyrightOwner>Deere &amp; Company</copyrightOwner>
     </properties>
 
     <scm>
         <connection>scm:git:https://github.com/JohnDeere/outstanding.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/JohnDeere/outstanding.git</developerConnection>
         <url>https://github.com/JohnDeere/outstanding</url>
-        <tag>HEAD</tag>
+        <tag>outstanding-1.1.0</tag>
     </scm>
 
     <developers>
