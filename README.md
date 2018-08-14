@@ -64,7 +64,9 @@ for an payload that tracks elapsed time, and lots of other things too.
 This builds with [Maven 3.0](https://maven.apache.org/docs/3.0/release-notes.html) 
 and [Java 8](http://openjdk.java.net/install/)
 
-```mvn clean verify```
+```bash
+mvn clean verify
+```
 
 The best way to see Outstanding in action is to run the 
 [Concurrency Test](./outstanding-java/src/test/java/com/deere/isg/outstanding/ConcurrencyTest.java) from your IDE.
