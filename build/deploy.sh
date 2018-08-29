@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright 2016-2018 Deere & Company
+# Copyright 2018 Deere & Company
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +17,6 @@
 
 pushd ..
 mvn clean verify
-mvn -DskipTests release:prepare
-mvn -DskipTests release:perform
+mvn -DskipTests release:prepare -P ossrh
+mvn -DskipTests release:perform -P ossrh
 popd
