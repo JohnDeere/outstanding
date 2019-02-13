@@ -1,2 +1,3 @@
-
-See the John Deere [Enterprise Privacy Statement](https://www.deere.com/en/privacy-and-data/).
+Please refer to [John Deere](http://www.deere.com)'s common 
+[Privacy Statement](https://github.com/JohnDeere/policies/blob/master/.github/PRIVACY.md) 
+for all Open Source projects.
