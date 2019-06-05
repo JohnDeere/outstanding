@@ -8,6 +8,8 @@ Worker threads create() tickets with payloads, and return them by close()ing the
 Iterators and Streams are provided for applications to see what outstanding payloads there are. 
 
 ## Installation
+Outstanding requires Java 8+ to run.
+
 ```xml
 <dependency>
     <groupId>com.deere.isg</groupId>
@@ -66,8 +68,8 @@ See [work-tracker](https://github.com/JohnDeere/work-tracker)
 for an payload that tracks elapsed time, and lots of other things too.
 
 ## Testing Locally
-This builds with [Maven 3.0](https://maven.apache.org/docs/3.0/release-notes.html) 
-and [Java 8](http://openjdk.java.net/install/)
+This builds with [Maven 3.6.1](https://maven.apache.org/docs/3.6.1/release-notes.html) 
+and [Java 11](http://openjdk.java.net/install/).
 
 ```bash
 mvn clean verify
