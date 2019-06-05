@@ -16,6 +16,11 @@ Iterators and Streams are provided for applications to see what outstanding payl
 </dependency>
 ```
 
+## Module support for Java 9 and later
+```
+ requires com.deere.isg.outstanding;
+```
+
 ## Usage
 ```java
     private static Outstanding<String> outstanding = new Outstanding<>();
