@@ -25,13 +25,13 @@ Outstanding requires Java 8+ to run.
 
 ## Usage
 ```java
-    private static Outstanding<String> outstanding = new Outstanding<>();
+private static Outstanding<String> outstanding = new Outstanding<>();
 
-    String payload = UUID.randomUUID().toString();  // make some kind of tracking information.
-    outstanding.doInTransaction(payload, Example::doWork);
+String payload = UUID.randomUUID().toString();  // make some kind of tracking information.
+outstanding.doInTransaction(payload, Example::doWork);
 
-    System.out.println("In progress work:");
-    outstanding.stream().forEach(System.out::println);
+System.out.println("In progress work:");
+outstanding.stream().forEach(System.out::println);
 
 ```
 
