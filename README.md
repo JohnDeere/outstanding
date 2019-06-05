@@ -14,7 +14,7 @@ Outstanding requires Java 8+ to run.
 <dependency>
     <groupId>com.deere.isg</groupId>
     <artifactId>outstanding</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
