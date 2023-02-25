@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.Matchers.is;
+
 import static org.junit.Assert.*;
 
 public class OutstandingTest {
@@ -40,7 +40,7 @@ public class OutstandingTest {
         assertEmptyIteration(outstanding);
         assertEmptyIterator(outstanding.iterateTickets());
 
-        assertThat(outstanding.isEmpty(), is(true));
+        assertTrue(outstanding.isEmpty());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class OutstandingTest {
         assertIteration(outstanding, 1, 3);
         assertIterator(outstanding.iterateTickets(), one, three);
 
-        assertThat(outstanding.isEmpty(), is(false));
+        assertFalse(outstanding.isEmpty());
     }
 
     @Test
@@ -75,7 +75,7 @@ public class OutstandingTest {
         assertIteration(outstanding, 1, 2);
         assertIterator(outstanding.iterateTickets(), one, two);
 
-        assertThat(outstanding.isEmpty(), is(false));
+        assertFalse(outstanding.isEmpty());
     }
 
     @Test
@@ -97,7 +97,7 @@ public class OutstandingTest {
         assert1iteration(outstanding, 2);
         assertIterator(outstanding.iterateTickets(), two);
 
-        assertThat(outstanding.isEmpty(), is(false));
+        assertFalse(outstanding.isEmpty());
     }
 
     @Test
@@ -130,7 +130,7 @@ public class OutstandingTest {
 
         assertIteration(outstanding, 1, 2, 3);
 
-        assertThat(outstanding.isEmpty(), is(false));
+        assertFalse(outstanding.isEmpty());
     }
 
     @Test
@@ -185,7 +185,7 @@ public class OutstandingTest {
     @Test
     public void doInTransactionTest() {
         outstanding.doInTransaction(1, () -> assert1iteration(outstanding, 1));
-        assertThat(outstanding.isEmpty(), is(true));
+        assertTrue(outstanding.isEmpty());
     }
 
 
@@ -210,11 +210,11 @@ public class OutstandingTest {
         for(Object i: values) {
             assertNext(iterator, i);
         }
-        assertThat(iterator.hasNext(), is(false));
+        assertFalse(iterator.hasNext());
     }
 
     private static void assertNext(Iterator<?> iterator, Object value) {
-        assertThat(iterator.hasNext(), is(true));
+        assertTrue(iterator.hasNext());
         assertEquals(value, iterator.next());
     }
 
@@ -224,7 +224,7 @@ public class OutstandingTest {
     }
 
     private static void assertEmptyIterator(Iterator<?> iterator) {
-        assertThat(iterator.hasNext(), is(false));
+        assertFalse(iterator.hasNext());
         try {
             iterator.next();
             fail("Should have thrown NoSuchElementException");
@@ -235,15 +235,15 @@ public class OutstandingTest {
 
     private static <T> Outstanding<T>.Ticket assertCreateTicket(Outstanding<T> outstanding, T value) {
         Outstanding<T>.Ticket ticket = outstanding.create(value);
-        assertThat(ticket.isClosed(), is(false));
+        assertFalse(ticket.isClosed());
         assertEquals(value, ticket.getPayload().get());
         assertEquals(value.toString(), ticket.toString());
         return ticket;
     }
 
     private static void assertClosed(Outstanding<?>.Ticket ticket) {
-        assertThat(ticket.isClosed(), is(true));
-        assertThat(ticket.getPayload().isPresent(), is(false));
+        assertTrue(ticket.isClosed());
+        assertFalse(ticket.getPayload().isPresent());
         assertEquals("deleted", ticket.toString());
     }
 }
