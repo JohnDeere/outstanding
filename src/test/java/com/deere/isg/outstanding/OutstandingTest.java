@@ -15,14 +15,15 @@
  */
 package com.deere.isg.outstanding;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OutstandingTest {
 
@@ -142,11 +143,11 @@ public class OutstandingTest {
         assertEquals(3, outstanding.getNumLinks());
 
         three.close();
-        assertEquals("Can't remove self link", 3, outstanding.getNumLinks());
+        assertEquals(3, outstanding.getNumLinks(), "Can't remove self link");
         two.close();
-        assertEquals("Don't cleanup the end link", 3, outstanding.getNumLinks());
+        assertEquals(3, outstanding.getNumLinks(), "Don't cleanup the end link");
         one.close();
-        assertEquals("Will collapse the beginning and middle links", 1, outstanding.getNumLinks());
+        assertEquals(1, outstanding.getNumLinks(), "Will collapse the beginning and middle links");
     }
 
     @Test
@@ -192,10 +193,10 @@ public class OutstandingTest {
         boolean run = false;
         for(int value: outstanding) {
             assertEquals(expected, value);
-            assertFalse("There should be only one value in the iterator", run);
+            assertFalse(run, "There should be only one value in the iterator");
             run = true;
         }
-        assertTrue("Should have had 1 item in the iterator", run);
+        assertTrue(run, "Should have had 1 item in the iterator");
     }
 
     @SuppressWarnings("unchecked")

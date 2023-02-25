@@ -15,15 +15,16 @@
  */
 package com.deere.isg.outstanding;
 
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-@Ignore("Ignored because these tests are meant for a human to watch how it works with concurrency")
+@Disabled("Ignored because these tests are meant for a human to watch how it works with concurrency")
 public class ConcurrencyTest {
     private TestableOutstanding outstanding = new TestableOutstanding();
 
